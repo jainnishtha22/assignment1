@@ -1,0 +1,20 @@
+
+<div *ngIf="postList">
+    <h1 class="text-center mt-3">Posts</h1>
+    <table class="table table-striped m-5">
+        <thead>
+        <tr>
+          <th scope="col" >No.</th>
+          <th scope="col" >Title</th>
+          <th scope="col" ></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let post of postList">
+         <th scope="row">{{ post.id }}</th>
+          <td> {{post.title}}</td>
+          <td><a [routerLink]="['/post/detail']" [queryParams]="{id: post.id}">View Details</a></td>
+        </tr>
+        </tbody>
+      </table>
+</div>
